@@ -1,4 +1,5 @@
 
+
 # Dictionaries lab
 
 ### Introduction
@@ -26,7 +27,7 @@ Let's retrieve the population of the city and assign it to the variable `greenvi
 
 
 ```python
-greenville_population = None # change None
+greenville_population = greenville['Population'] # change None
 greenville_population # 93
 ```
 
@@ -34,7 +35,7 @@ Now retrieve the area of Greenville and assign it to the variable `greenville_ar
 
 
 ```python
-greenville_area = None
+greenville_area = greenville['Area']
 greenville_area # 68
 ```
 
@@ -42,7 +43,8 @@ Now let's take a look at all of the keys in the `greenville` dictionary and coer
 
 
 ```python
-city_keys = None
+city_keys = list(greenville.keys())
+# or list(dict.keys(greenville))
 city_keys # ['Area', 'City', 'Country', 'Population']
 ```
 
@@ -50,7 +52,7 @@ Alright, next let's get all of the values in our greenville dictionary and coerc
 
 
 ```python
-city_values = None
+city_values = list(greenville.values())
 city_values # [68, 'Greenville', 'USA', 93]
 ```
 
@@ -62,7 +64,7 @@ We can retrieve our data from an excel or Google sheets like the one [shown here
 
 Lukily for us, we already have the spreadsheet downloaded and located in the current folder.  You can find the file [in the github repository](https://github.com/learn-co-curriculum/python-dictionaries-lab/tree/solution). Next, we will use a Library called **Pandas** to get this data from the excel file into Python code. We already have the code for reading an excel file into Python written for us below. Let's check it out.
 
-> **Note:** To import a library or module in Python, we do so by writing `import` followed by the name of the thing we want to import. We can optionally include an *alias* for our import, which is done by writing **as** after the name of the thing we are importing followed by the name we would like to use for our *alias*. **Do not worry** about aliases right now. Just know that the *convention* for importing the pandas library is to import it and alias it as `pd` like we see below. 
+> **Note:** To import a library or module in Python, we do so by writing `import` followed by the name of the thing we want to import. We can optionally include an *alias* for our import, which is done by writing **as** after the name of the thing we are importing followed by the name we would like to use for our *alias*. **Do not worry** about aliases right now. Just know that the *convention* for importing the pandas library is to import it and alias it as `pd` like we see below.
 
 
 ```python
@@ -91,7 +93,7 @@ First, access the third to last element and set it equal to the variable `salina
 
 
 ```python
-salina = None 
+salina = cities[9]
 salina
 # {'City': 'Salina Island', 'Country': 'Italy', 'Population': 3, 'Area': 26}
 ```
@@ -100,7 +102,7 @@ Now access the fifth country in the list, and set it's population equal to a var
 
 
 ```python
-los_cabos_pop = None
+los_cabos_pop = cities[4]['Population']
 los_cabos_pop # 288
 ```
 
@@ -108,7 +110,7 @@ Now calculate the number of cities in the list and assign the number to the vari
 
 
 ```python
-city_count = None
+city_count = len(cities)
 city_count # 12
 ```
 
@@ -116,7 +118,7 @@ Finally, change the spelling of the South Korean city, Pyeongchang, to the strin
 
 
 ```python
-cities[7]['City'] = None
+cities[7]['City'] = 'PyeongChang'
 cities[7]['City'] # 'PyeongChang'
 ```
 
@@ -124,7 +126,7 @@ Now let's work on retrieving a collection of information about a dictionary.  Us
 
 
 ```python
-pyeongchang_values = None
+pyeongchang_values = list(cities[7].values())
 
 pyeongchang_values # ['PyeongChang', 'South Korea', 44, 1464]
 ```
@@ -138,7 +140,7 @@ And now set `pyeongchang_keys` equal to a list of keys in the dictionary regardi
 
 
 ```python
-pyeongchang_keys = None
+pyeongchang_keys = list(cities[7].keys())
 
 pyeongchang_keys # ['City', 'Country', 'Population', 'Area']
 ```
